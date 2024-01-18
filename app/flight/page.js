@@ -1,16 +1,20 @@
 "use client";
-
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import FlightList from "../components/FlightList";
 import LogoutBtn from "../components/LogoutBtn";
-
+import LoginLayout from "../loginLayout";
+import { useFlights } from "../contexts/FlightsContext";
+import CustomerData from "../components/CustomerData";
+import TicketSection from "../components/TicketSection";
 export default function Page() {
-  const router = useRouter();
-
   return (
-    <div className="row">
-      <div className="col-12">
-        <LogoutBtn />
+    <LoginLayout>
+      <div className="row">
+        <div className="col-12">
+          <TicketSection />
+          <LogoutBtn />
+        </div>
       </div>
-    </div>
+    </LoginLayout>
   );
 }

@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useContext, useEffect } from "react";
 import { logout } from "../services/auth";
 import showAlert from "../utils/sweetalert";
 import { useRouter } from "next/navigation";
+import { DefaultContext } from "../loginLayout";
 
 const LogoutBtn = () => {
   const router = useRouter();

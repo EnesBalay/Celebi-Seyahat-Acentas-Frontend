@@ -1,7 +1,8 @@
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { getCurrentUser } from "./services/auth";
-
+import { FlightsProvider } from "./contexts/FlightsContext";
+export const DefaultContext = createContext();
 const LoginLayout = ({ children }) => {
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -20,7 +21,11 @@ const LoginLayout = ({ children }) => {
   if (user === null) {
     isUserAuth();
   }
-  return <> {children}</>;
+  return (
+    <DefaultContext.Provider value={{ user }}>
+      <FlightsProvider> {children}</FlightsProvider>
+    </DefaultContext.Provider>
+  );
 };
 
 export default LoginLayout;

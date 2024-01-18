@@ -3,3 +3,4 @@ const baseRoute = "flight";
 export const getAllFlights = async () => {
   return makeApiRequest(baseRoute, "get");
 };
+

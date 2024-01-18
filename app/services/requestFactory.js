@@ -14,7 +14,6 @@ export const makeApiRequest = async (endpoint, method, data) => {
       data,
       withCredentials: true,
     });
-    console.log(response);
     return response;
   } catch (error) {
     throw new Error(error.response?.data?.message || "API request failed");

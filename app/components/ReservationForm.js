@@ -1,7 +1,6 @@
-// components/ReservationForm.js
 import React, { useEffect, useState } from "react";
 import { useFlights } from "../contexts/FlightsContext";
-import Input from "./Input"; // Input bileşenini ekledik
+import Input from "./Input"; 
 import showAlert from "../utils/sweetalert";
 
 const ReservationForm = () => {
@@ -24,11 +23,8 @@ const ReservationForm = () => {
   };
 
   const handleReservation = () => {
-    // Burada formData'yı kullanarak rezervasyonu oluşturabilirsiniz.
-    // Örneğin bir API'ye POST isteği göndermek gibi.
     console.log("Rezervasyon bilgileri:", formData);
     console.log("Seçilen uçuş bilgileri:", selectedFlight);
-    // TODO: Rezervasyonu oluştur ve kullanıcıyı başka bir sayfaya yönlendir
     setCustomerData(formData);
   };
   useEffect(() => {
